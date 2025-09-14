@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 export default function StarField() {
   useEffect(() => {
     const createStars = () => {
-      const starsContainer = document.querySelector('.stars')
+      const starsContainer = document.querySelector('.stars') as HTMLElement
       if (!starsContainer) return
 
       // Clear existing stars

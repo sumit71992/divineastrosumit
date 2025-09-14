@@ -4,9 +4,18 @@ import { useState } from 'react'
 
 export default function MobileCalculator() {
   const [mobileNumber, setMobileNumber] = useState('')
-  const [result, setResult] = useState<any>(null)
+  const [result, setResult] = useState<{
+    number: number;
+    energy: string;
+    color: string;
+    description: string;
+  } | null>(null)
 
-  const interpretations:any = {
+  const interpretations: Record<number, {
+    energy: string;
+    color: string;
+    description: string;
+  }> = {
     1: { energy: "Leadership", color: "Red", description: "You attract leadership opportunities and independence. Great for business owners and entrepreneurs." },
     2: { energy: "Cooperation", color: "Orange", description: "Your number enhances partnerships and diplomatic relations. Perfect for team collaboration." },
     3: { energy: "Creativity", color: "Yellow", description: "This vibration attracts creative opportunities and social connections. Ideal for artists and communicators." },
@@ -47,7 +56,7 @@ export default function MobileCalculator() {
         </h2>
         
         <p className="text-mystical-100 mb-8 text-lg">
-          Get instant insights into your mobile number's energy signature
+          Get instant insights into your mobile number&apos;s energy signature
         </p>
 
         <div className="max-w-lg mx-auto mb-8">
@@ -65,7 +74,7 @@ export default function MobileCalculator() {
           onClick={calculateNumerology}
           className="bg-gradient-to-r from-yellow-400 to-yellow-300 text-mystical-700 px-10 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-yellow-400/40 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-mystical-700 mb-8"
         >
-          Calculate My Number's Energy
+          Calculate My Number&apos;s Energy
         </button>
 
         {result && (

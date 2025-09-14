@@ -9,7 +9,11 @@ export const metadata = {
   keywords: 'astrology, numerology, KP astrology, Lal Kitab, Vastu, mobile numerology, name numerology',
 }
 
-export default function RootLayout({ children }:{children:any}) {
+export default function RootLayout({ 
+  children 
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en">
       <body className={inter.className}>{children}</body>
