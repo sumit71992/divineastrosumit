@@ -497,11 +497,11 @@ export default function MobileAnalyserPage() {
       <div className="relative z-10">
         <Header />
 
-        <main className="px-4 py-10 mb-[5rem]">
+        <main className="px-4 py-10 mb-5">
           <div className="mx-auto w-full max-w-2xl">
             <div className="p-[1px] pb-2 rounded-2xl bg-gradient-to-br from-white/20 via-white/10 to-transparent">
               <div className="flex items-center justify-center gap-3 mb-6">
-                <h1 className="mt-[3rem] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
+                <h1 className="mt-5 text-m sm:text-l md:text-xl lg:text-2xl xl:text-3xl">
                   Check Your Mobile Number Compatibility
                 </h1>
               </div>

@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <header className="text-center py-16 px-5">
+    <header className="text-center py-12 px-5">
       <div className="max-w-4xl mx-auto">
         <div className="w-32 h-32 mx-auto mb-8 border-4 border-yellow-400 rounded-full flex items-center justify-center bg-yellow-400/10 relative">
           <div className="text-6xl text-yellow-400 animate-rotate-slow">✧</div>
