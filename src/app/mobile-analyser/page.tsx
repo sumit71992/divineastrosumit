@@ -499,7 +499,7 @@ export default function MobileAnalyserPage() {
 
         <main className="px-4 py-10 mb-[5rem]">
           <div className="mx-auto w-full max-w-2xl">
-            <div className="p-[1px] rounded-2xl bg-gradient-to-br from-white/20 via-white/10 to-transparent">
+            <div className="p-[1px] pb-2 rounded-2xl bg-gradient-to-br from-white/20 via-white/10 to-transparent">
               <div className="flex items-center justify-center gap-3 mb-6">
                 <h1 className="mt-[3rem] text-[2rem]">
                   Check Your Mobile Number Compatibility
@@ -507,7 +507,7 @@ export default function MobileAnalyserPage() {
               </div>
 
               <div className="flex items-center justify-center space-y-3 p-5">
-                <div className="w-[25%]">
+                <div className="w-full">
                   <label
                     htmlFor="mobile"
                     className="block text-sm font-medium text-white/80"
@@ -539,29 +539,55 @@ export default function MobileAnalyserPage() {
                   )}
                 </div>
               </div>
-              <button
-                type="button"
-                className="mt-7 w-full rounded-xl bg-gradient-to-r from-white to-white/80 text-black font-semibold py-3.5 disabled:opacity-40 disabled:cursor-not-allowed hover:from-white hover:to-white transition shadow-[0_10px_30px_-10px_rgba(255,255,255,0.6)]"
-                onClick={handleSubmit}
-              >
-                Analyse Number
-              </button>
+              <div className="flex items-center justify-center">
+                <button
+                  type="button"
+                  className="mt-7 w-[50%] rounded-xl bg-gradient-to-r from-white to-white/80 text-black font-semibold py-3.5 disabled:opacity-40 disabled:cursor-not-allowed hover:from-white hover:to-white transition shadow-[0_10px_30px_-10px_rgba(255,255,255,0.6)]"
+                  onClick={handleSubmit}
+                >
+                  Analyse Number
+                </button>
+              </div>
             </div>
           </div>
           <div>
-            <h1>Results</h1>
-            <div>
+            <h2 className="mt-10 text-xl font-semibold text-white/90">
+              Results
+            </h2>
+            <div className="mt-3 h-[1px] w-24 bg-gradient-to-r from-white/60 to-transparent" />
+
+            <div className="mt-6 space-y-4">
               {data.map((item) => (
-                <div key={item.key} className="mt-[1rem]">
-                  <h1>
-                    {item.key}{" "}
-                    <span className={`bg-[${item.bg}] text-[${item?.color}]`}>
+                <div
+                  key={item.key}
+                  className="group rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm transition hover:border-white/20 shadow-[0_10px_30px_-10px_rgba(255,255,255,0.2)]"
+                >
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="text-lg font-semibold tracking-wide text-white/90">
+                      {item.key}
+                    </div>
+                    <span
+                      style={{ backgroundColor: item.bg, color: item.color }}
+                      className="inline-block rounded-full px-3 py-1 text-xs font-medium uppercase tracking-wide"
+                    >
                       {item.type}
                     </span>
-                  </h1>
-                  {item?.value?.map((vl: string, i: number) => (
-                    <p key={i}>{vl}</p>
-                  ))}
+                  </div>
+
+                  <ul className="mt-3 space-y-2">
+                    {item?.value?.map((vl: string, i: number) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-2 text-white/85"
+                      >
+                        <span
+                          className="mt-1 inline-block h-1.5 w-1.5 rounded-full"
+                          style={{ backgroundColor: item.color }}
+                        />
+                        <span>{vl}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               ))}
             </div>

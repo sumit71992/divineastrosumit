@@ -1,8 +1,7 @@
-@import "tailwindcss/preflight";
-@import "tailwindcss/utilities";
+@import "tailwindcss";
 
 body {
-  font-family: 'Georgia', serif;
+  font-family: "Georgia", serif;
   background: linear-gradient(135deg, #1a4d3a 0%, #2d5a3d 50%, #0f3d2c 100%);
   color: white;
   min-height: 100vh;
@@ -23,4 +22,7 @@ body {
   background: #ffd700;
   border-radius: 50%;
   animation: twinkle 3s infinite;
+}
+button {
+  cursor: pointer;
 }
