@@ -489,7 +489,7 @@ export default function MobileAnalyserPage() {
 
     setData(results);
   };
-  console.log(555, data);
+  //   console.log(555, data);
 
   return (
     <div className="min-h-screen relative">
