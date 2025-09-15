@@ -1,12 +1,11 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react'
-import Header from './components/Header'
-import ServicesGrid from './components/ServicesGrid'
-import MobileCalculator from './components/MobileCalculator'
-import Footer from './components/Footer'
-import WhatsAppButton from './components/WhatsAppButton'
-import StarField from './components/starField'
+import Header from "./components/Header";
+import ServicesGrid from "./components/ServicesGrid";
+import MobileCalculator from "./components/MobileCalculator";
+import Footer from "./components/Footer";
+import WhatsAppButton from "./components/WhatsAppButton";
+import StarField from "./components/starField";
 
 export default function Home() {
   return (
@@ -20,5 +19,5 @@ export default function Home() {
       </div>
       <WhatsAppButton />
     </div>
-  )
+  );
 }

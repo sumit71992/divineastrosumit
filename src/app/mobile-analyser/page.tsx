@@ -5,7 +5,22 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
 import StarField from "../components/starField";
-const mappings = [
+type Mapping = {
+  keys: string[];
+  type: string;
+  bg: string;
+  color: string;
+  value: string[];
+};
+
+type ResultItem = {
+  key: string;
+  type: string;
+  bg: string;
+  color: string;
+  value: string[];
+};
+const mappings: Mapping[] = [
   {
     keys: ["14", "41"],
     type: "MOST TROUBLESOME",
@@ -444,7 +459,7 @@ export default function MobileAnalyserPage() {
   const [value, setValue] = useState<string>("");
   const [touched, setTouched] = useState<boolean>(false);
   const [isValid, setIsValid] = useState<boolean>(true);
-  const [data, setData] = useState<any[]>([]);
+  const [data, setData] = useState<ResultItem[]>([]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const digitsOnly = e.target.value.replace(/\D/g, "");
@@ -456,7 +471,7 @@ export default function MobileAnalyserPage() {
     if (value.length !== 10) {
       return setIsValid(false);
     }
-    let results: any[] = [];
+    const results: ResultItem[] = [];
 
     mappings.forEach((mapping) => {
       mapping.keys.forEach((key) => {
