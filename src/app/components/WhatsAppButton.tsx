@@ -3,7 +3,7 @@ export default function WhatsAppButton() {
     const message = encodeURIComponent(
       "Hi! I'm interested in Divine Astro Sumit services. Please guide me."
     );
-    window.open(`https://wa.me/+919876543210?text=${message}`, "_blank");
+    window.open(`https://wa.me/+919115616775?text=${message}`, "_blank");
   };
 
   return (
