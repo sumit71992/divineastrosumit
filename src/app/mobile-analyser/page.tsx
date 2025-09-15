@@ -501,7 +501,7 @@ export default function MobileAnalyserPage() {
           <div className="mx-auto w-full max-w-2xl">
             <div className="p-[1px] pb-2 rounded-2xl bg-gradient-to-br from-white/20 via-white/10 to-transparent">
               <div className="flex items-center justify-center gap-3 mb-6">
-                <h1 className="mt-[3rem] text-[2rem]">
+                <h1 className="mt-[3rem] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
                   Check Your Mobile Number Compatibility
                 </h1>
               </div>
@@ -526,7 +526,7 @@ export default function MobileAnalyserPage() {
                       onChange={handleChange}
                       onBlur={() => setTouched(true)}
                       placeholder="Enter 10-digit number"
-                      className="w-full rounded-xl border border-white/15 bg-white/5 pl-14 pr-12 py-4 text-white placeholder-white/40 outline-none focus:border-white/50 focus:ring-2 focus:ring-white/20 transition"
+                      className="w-full rounded-xl border border-white/15 bg-white/5 pl-4 pr-12 py-4 text-white placeholder-white/40 outline-none focus:border-white/50 focus:ring-2 focus:ring-white/20 transition"
                     />
                     <span className="absolute inset-y-0 right-0 pr-4 flex items-center text-xs text-white/60">
                       {value.length}/10
