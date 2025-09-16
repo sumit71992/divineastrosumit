@@ -234,7 +234,7 @@ export default function MobileAnalyserPage() {
           {zero?.length > 0 && (
             <div>
               <h2 className="mt-10 text-2xl font-semibold text-white/90 text-center">
-                Effect of Zero Pairs
+                Effect Of Zero In Mobile Number
               </h2>
               <div className="mt-3 h-[1px] w-24 bg-gradient-to-r from-white/60 to-transparent" />
 
