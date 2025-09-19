@@ -8,6 +8,7 @@ import StarField from "../components/starField";
 import {
   checkRepetitiveNumbers,
   extractZeroPairs,
+  getUniquePairs,
   mappings,
   sumDigits,
   validationRules,
@@ -48,22 +49,27 @@ export default function MobileAnalyserPage() {
     if (value.length !== 10) {
       return setIsValid(false);
     }
+    const pairs = getUniquePairs(value);
     const results: ResultItem[] = [];
     const zeros: ResultItem[] = [];
     const zeroPairs = extractZeroPairs(+value);
     const repetitivePairs = checkRepetitiveNumbers(value);
 
+    pairs.forEach((pair) => {
+      const mapping = mappings.find((m) => m.keys.includes(pair));
+      if (mapping) {
+        results.push({
+          key: pair,
+          value: mapping.value,
+          type: mapping.type,
+          bg: mapping.bg,
+          color: mapping.color,
+        });
+      }
+    });
+
     mappings.forEach((mapping) => {
       mapping.keys.forEach((key) => {
-        if (value.includes(key)) {
-          results.push({
-            key,
-            value: mapping.value,
-            type: mapping.type,
-            bg: mapping.bg,
-            color: mapping.color,
-          });
-        }
         if (zeroPairs.includes(key)) {
           zeros.push({
             key,

@@ -1242,3 +1242,13 @@ export const checkRepetitiveNumbers = (numberStr: string) => {
 
   return result;
 };
+export const getUniquePairs = (numStr: string) => {
+  const pairs = [];
+  for (let i = 0; i < numStr.length - 1; i++) {
+    let pair = numStr[i] + numStr[i + 1];
+    pairs.push(pair);
+  }
+  const uniquePairs = [...new Set(pairs)];
+
+  return uniquePairs;
+};

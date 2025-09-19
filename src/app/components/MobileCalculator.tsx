@@ -20,16 +20,16 @@ export default function MobileCalculator() {
     }
   > = {
     1: {
-      energy: "Leadership",
+      energy: "Leadership, Entrepreneurship",
       color: "Red",
       description:
         "You attract leadership opportunities and independence. Great for business owners and entrepreneurs.",
     },
     2: {
-      energy: "Cooperation",
+      energy: "Cooperation, Friendship",
       color: "Orange",
       description:
-        "Your number enhances partnerships and diplomatic relations. Perfect for team collaboration.",
+        "Your number enhances partnerships and diplomatic relations. Emotions. Perfect for team collaboration.",
     },
     3: {
       energy: "Creativity",
